@@ -22,8 +22,58 @@
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet"> <!-- Customized Bootstrap Stylesheet -->
     <link href="css/bootstrap.min.css" rel="stylesheet"> <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
-</head>
+    <style>
+        /* Fix: force profile photo in Home section to show fully (no crop), no matter what style.css does */
+        #home #profile-photo {
+            width: 100% !important;
+            aspect-ratio: 625 / 667 !important;
+            height: auto !important;
+            max-height: none !important;
+            min-height: 0 !important;
+            background-size: contain !important;
+            background-repeat: no-repeat !important;
+            background-position: center center !important;
+            position: static !important;
+            object-fit: unset !important;
+            overflow: visible !important;
+        }
 
+        #home,
+        #home .row,
+        #home .col-lg-6 {
+            overflow: visible !important;
+            height: auto !important;
+            max-height: none !important;
+        }
+
+        /* Fix: make the top navbar shorter */
+        nav.navbar {
+            padding-top: 0.4rem !important;
+            padding-bottom: 0.4rem !important;
+            min-height: 0 !important;
+        }
+
+        nav.navbar .navbar-brand img,
+        nav.navbar a[href="./img/bg-header.png"] img {
+            width: 130px !important;
+            height: auto !important;
+        }
+
+        nav.navbar .nav-link {
+            padding-top: 0.5rem !important;
+            padding-bottom: 0.5rem !important;
+        }
+
+        /* Fix: keep hero text from hiding behind the fixed navbar */
+        #home {
+            padding-top: 110px !important;
+        }
+
+        #home .col-lg-6.py-6 {
+            padding-top: 0 !important;
+        }
+    </style>
+</head>
 <body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="51"> <!-- Spinner Start -->
     <div id="spinner"
         class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
@@ -54,7 +104,7 @@
                     <h3 class="text-primary mb-3" style="color:white;">I'm</h3>
                     <h1 class="display-3 mb-3" style="color:white;">Sane <br>Aboubaker</h1>
                     <h2 class="typed-text-output d-inline"></h2>
-                    <div class="typed-text d-none">|_#IT: Cybersecurity Consultant, |_#CyberSecurity: Red teams Analyst
+                    <div class="typed-text d-none"> Cybersecurity Consultant,  Red team Analyst
                     </div>
                     <div class="d-flex align-items-center pt-5">
                         <a href="./doc/sane.pdf" download="" class="btn btn-primary py-3 px-4 me-5"
@@ -107,18 +157,17 @@
                         </div>
                     </div>
                     <div class="d-flex align-items-center mb-3">
-                        <h5 class="border-end pe-3 me-3 mb-0">Third year Systems and Network Engineering</h5>
+                        <h5 class="border-end pe-3 me-3 mb-0">Bachelor's in Systems and Network Engineering</h5>
                         <h2 class="text-primary fw-bold mb-0" data-toggle="counter-up">2025</h2>
                     </div>
                     <p class="mb-4">Sup'Management</p>
                     <div class="d-flex align-items-center mb-3">
-                        <h5 class="border-end pe-3 me-3 mb-0">Diploma Technician Specialized Infrastructure Digital
-                            option CyberSecurity</h5>
+                        <h5 class="border-end pe-3 me-3 mb-0">Diploma in Digital Infrastructure – Cybersecurity</h5>
                         <h2 class="text-primary fw-bold mb-0" data-toggle="counter-up">2023</h2>
                     </div>
                     <p class="mb-0">ISMONTIC Tanger</p>
                     <div class="d-flex align-items-center mb-3">
-                        <h5 class="border-end pe-3 me-3 mb-0">Baccalaureate in physical science</h5>
+                        <h5 class="border-end pe-3 me-3 mb-0">Baccalaureate in Physical Sciences</h5>
                         <h2 class="text-primary fw-bold mb-0" data-toggle="counter-up">2019</h2>
                     </div>
                     <p class="mb-0">Ahmed el Hansali High School</p>
@@ -128,7 +177,7 @@
     </div>
     </div>
     <div class="section-heading-wrap text-center mb-5">
-        <h1><span class="gsap-reveal" style="color: #0000FF;">About Me</span></h1> <img src="img/line.png" alt="divider"
+        <h1><span class="gsap-reveal" style="color: #d8c3c7;">About Me</span></h1> <img src="img/line.png" alt="divider"
             width="150"> </span>
     </div>
     <div class="row mt-5 justify-content-between">
@@ -137,22 +186,22 @@
             </figure>
         </div>
         <div class="col-lg-4 pr-lg-5">
-            <h3 class="mb-4 heading-h3"><span class="gsap-reveal" style="color: #FF1900;">Hello! </span></h3>
-            <h5 style="font-family: 'Times New Roman', Times, serif;color:#fff">I'm sane aboubaker, a dedicated
-                professional in the realm of cybersecurity with a strong focus on Security analyzing (SOC). With a solid
-                foundation in IT and specialized expertise in cyber defense, I have a wealth of skills, knowledge and
-                experience.</h5>
-            <h5 style="font-family: 'Times New Roman', Times, serif;color:#fff">My journey in learning, search and
-                Applying my knowledge as a technician specialized in the field of cybersecurity has equipped me with a
-                comprehensive understanding of various domains within IT, bolstering my capabilities as an Analyst in a
-                Security Operation Center. Proficient in an array of vital practices such as Penetration Testing,
-                Hardening, Incident Response and Management, as well as Vulnerability Assessment, I am committed to
-                fortifying digital landscapes against evolving threats. My continuous pursuit of knowledge and
-                dedication to honing my self allow me to effectively navigate the dynamic and complex landscape of
-                cybersecurity. With a fervent commitment to safeguarding digital ecosystems, <h5
-                    style="color: #0000FF;">I endeavor to contribute my expertise to creating a more secure online
-                    world.</h5>
-            </h5>
+             <h3 class="mb-4 heading-h3"><span class="gsap-reveal" style="color: #FF1900;">Hello!
+                                </span></h3>
+                            <h5 style="font-family: 'Times New Roman', Times, serif;color:#fff">I'm Sane Aboubaker, a
+                                cybersecurity professional specializing in Security Operations (SOC) and offensive
+                                security. With a solid foundation in IT infrastructure and hands-on experience
+                                defending digital environments, I bring a practical, threat-focused approach to every
+                                engagement.</h5>
+                            <h5 style="font-family: 'Times New Roman', Times, serif;color:#fff">My path in
+                                cybersecurity has taken me deep into penetration testing, system hardening, incident
+                                response, and vulnerability assessment — building a well-rounded skill set as a SOC
+                                Analyst. I'm driven by continuous learning and a genuine curiosity for how systems
+                                break, which fuels my ability to anticipate and neutralize emerging threats before
+                                they cause damage. <span style="color: #0000FF;">I'm committed to one mission: helping
+                                    organizations build safer, more resilient digital environments — one assessment,
+                                    one investigation, one line of defense at a time.</span>
+                            </h5>
         </div>
     </div>
     </div>
@@ -348,42 +397,45 @@
                             <div id="tab-2" class="tab-pane fade show p-0">
                                 <div class="row gy-5 gx-4">
                                     <div class="col-sm-6">
-                                        <h5 style="color: white;">MDR Security Analyst</h5>
-                                        <hr class="text-primary my-2">
-                                        <p class="text-primary mb-1">10 mois 2025</p>
-                                        <h6 class="mb-0">Nucleon security</h6>
-
-                                        <!-- Logo -->
+                                        <h5 style="color: rgb(150, 12, 243);">MDR Security Analyst</h5>
+                                         <!-- Logo -->
                                         <img src="img/nucleon-security.png" alt="company logo" width="40px"
                                             style="margin-top: 10px;">
+                                        <hr class="text-primary my-2">
+                                        <p class="text-primary mb-1">10 mois 2025</p>
+                                        <h6 style="color: rgb(185, 178, 190);class="mb-0">Nucleon security</h6>
+
+                                       
                                     </div>
                                 </div>
 
-
+ <div id="tab-2" class="tab-pane fade show p-0"></div>
                                 <div class="row gy-5 gx-4">
                                     <div class="col-sm-6">
-                                        <h5 style="color: white;">Jr Penetration Tester</h5>
-                                        <hr class="text-primary my-2">
-                                        <p class="text-primary mb-1">(8 mois) 2024</p>
-                                        <h6 class="mb-0">DataProtect</h6>
-
-                                        <!-- Logo -->
+                                        <h5 style="color: rgb(150, 12, 243);">Jr Penetration Tester</h5>
+                                          <!-- Logo -->
                                         <img src="img/dataprotect.png" alt="company logo" width="40px"
                                             style="margin-top: 10px;">
+                                        <hr class="text-primary my-2">
+                                        <p class="text-primary mb-1">8 mois 2024</p>
+                                        <h6 style="color: rgb(185, 178, 190);class="mb-0">DataProtect</h6>
+
+                                      
                                     </div>
                                 </div>
 
 
                                 <div class="row gy-5 gx-4">
                                     <div class="col-sm-6">
-                                        <h5 style="color: white;">Analyste soc</h5>
-                                        <hr class="text-primary my-2">
-                                        <p class="text-primary mb-1">1 mois 05-2023</p>
-                                        <h6 class="mb-0">Délégation préfectorale de tanger assilah</h6>
-
+                                        <h5 style="color: rgb(150, 12, 243);">Analyste SOC</h5>
                                         <!-- Logo -->
                                         <img src="img/Délégation.png" alt="company logo" width="40px"
                                             style="margin-top: 10px;">
+                                        <hr class="text-primary my-2">
+                                        <p class="text-primary mb-1">1 mois 05-2023</p>
+                                        <h6 style="color: rgb(185, 178, 190);class="mb-0">Délégation préfectorale de tanger assilah</h6>
+
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -650,16 +702,17 @@
                 </div>
             </div>
         </div> <!-- Projects End --> <!-- Certification Start -->
-        <div class="container-fluid bg-light py-5 my-5" id="testimonial">
-            <div class="container-fluid py-5">
-                <h1 class="display-5 text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">Certification</h1>
-                <div class="row justify-content-center">
-                    <div class="col-lg-3 d-none d-lg-block">
-                        <div class="testimonial-left h-100"> <img class="img-fluid wow fadeIn" data-wow-delay="0.1s"
-                                src="img/crata.jpg" alt=""> <img class="img-fluid wow fadeIn" data-wow-delay="0.3s"
-                                src="img/Pentst.png" alt=""> <img class="img-fluid wow fadeIn" data-wow-delay="0.5s"
-                                src="img/jr-analyst.png" alt=""> </div>
+        <div class="container-fluid py-5 my-5" id="testimonial">
+        <div class="container-fluid py-5">
+            <h1 class="display-5 text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">Certification</h1>
+            <div class="row justify-content-center">
+                <div class="col-lg-2 d-none d-lg-block">
+                    <div class="testimonial-left h-100">
+                        
+                        
+                        
                     </div>
+                </div>
                     <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
                         <div class="owl-carousel testimonial-carousel">
                             <div class="testimonial-item text-center">
@@ -799,12 +852,13 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 d-none d-lg-block">
-                        <div class="testimonial-right h-100"> <img class="img-fluid wow fadeIn" data-wow-delay="0.1s"
-                                src="img/nuc1.png" alt=""> <img class="img-fluid wow fadeIn" data-wow-delay="0.3s"
-                                src="img/nuc2.png" alt=""> <img class="img-fluid wow fadeIn" data-wow-delay="0.5s"
-                                src="img/PE.png" alt=""> </div>
+                     <div class="col-lg-2 d-none d-lg-block">
+                    <div class="testimonial-right h-100">
+                        
+                        
+                        
                     </div>
+                </div>
                 </div>
             </div>
         </div> <!-- Certification End --> <!-- Contact Start -->
