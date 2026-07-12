@@ -16,31 +16,57 @@
     new WOW().init();
 
 
-    // Navbar on scrolling
-    $(window).scroll(function () {
-        if ($(this).scrollTop() > 300) {
-            $('.navbar').fadeIn('slow').css('display', 'flex');
-        } else {
-            $('.navbar').fadeOut('slow').css('display', 'none');
-        }
-    });
+    // Navbar and smooth anchor navigation
+    var $navbar = $('.navbar');
+    var $navLinks = $('.navbar-nav .nav-link');
+    var sectionIds = ['#home', '#about', '#skill', '#service', '#project', '#team', '#testimonial', '#contact'];
 
+    var getNavOffset = function () {
+        return ($navbar.outerHeight() || 0) + 8;
+    };
 
-    // Smooth scrolling on the navbar links
-    $(".navbar-nav a").on('click', function (event) {
-        if (this.hash !== "") {
-            event.preventDefault();
-            
-            $('html, body').animate({
-                scrollTop: $(this.hash).offset().top - 45
-            }, 1500, 'easeInOutExpo');
-            
-            if ($(this).parents('.navbar-nav').length) {
-                $('.navbar-nav .active').removeClass('active');
-                $(this).closest('a').addClass('active');
+    var updateActiveNav = function () {
+        var scrollPos = $(window).scrollTop() + getNavOffset() + 10;
+        var currentId = '#home';
+
+        sectionIds.forEach(function (id) {
+            var $section = $(id);
+            if ($section.length && scrollPos >= $section.offset().top) {
+                currentId = id;
             }
+        });
+
+        $navLinks.removeClass('active');
+        $('.navbar-nav .nav-link[href="' + currentId + '"]').addClass('active');
+    };
+
+    $navLinks.on('click', function (event) {
+        var targetHash = this.hash;
+        if (!targetHash) {
+            return;
+        }
+
+        var $target = $(targetHash);
+        if (!$target.length) {
+            return;
+        }
+
+        event.preventDefault();
+
+        $('html, body').stop().animate({
+            scrollTop: $target.offset().top - getNavOffset()
+        }, 800, 'easeInOutExpo');
+
+        $navLinks.removeClass('active');
+        $(this).addClass('active');
+
+        if ($('.navbar-collapse').hasClass('show')) {
+            $('.navbar-collapse').collapse('hide');
         }
     });
+
+    $(window).on('scroll', updateActiveNav);
+    updateActiveNav();
     
     
     // Back to top button
